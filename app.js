@@ -1,12 +1,14 @@
-let numeroSecreto = Math.floor(Math.random() * 10)+1;
+let numeroMaximoPosible = 50;
+let numeroSecreto = Math.floor(Math.random() * numeroMaximoPosible)+1;
 let numeroUsuario;
 let intentos = 1;
 let palabraVeces = 'intento';
 
-//console.log(numeroSecreto); comentado para no desplegar numero en consola
+
+console.log(numeroSecreto); //comentado para no desplegar numero en consola
 
 while (numeroUsuario != numeroSecreto) {
-    numeroUsuario = parseInt(prompt("Me indicas un número por favor:"));
+    numeroUsuario = parseInt(prompt(`Me indicas un número por favor, entre 1 y ${numeroMaximoPosible}:`));
 
     console.log(numeroUsuario);
 
@@ -21,7 +23,7 @@ while (numeroUsuario != numeroSecreto) {
         intentos++; // Incrementa intentos después de cada interacción
         palabraVeces = 'intentos';
         console.log(intentos);
-        if (intentos > 3) {
+        if (intentos > 5) {
             alert('Lo siento, has perdido. El número secreto era'+ ' ' + numeroSecreto);
             break;
         }
@@ -30,5 +32,5 @@ while (numeroUsuario != numeroSecreto) {
     
 }
 /*
-Juego de adivinar el número
+Juego de adivinar el número secreto generado aleatoriamente
 */
